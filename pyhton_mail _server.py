@@ -1,0 +1,11 @@
+#To Authenticate Gmail to your Python Script and send an email.
+import smtplib
+SENDER_EMAIL = "ENTER YOUR SENDER MAIL"
+SENDER_PASSWD = "ENTER YOU MAIL APP PASSWORD " # IF NOT SHOWING IN MAIL SETTING PLEASE ON YOUR TWO STEP VERIFICATION 
+RECIEVER_EMAIL = "ENTER YOUR RECIEVER MAIL"
+MESSAGE ="MESSAGE YOU WANT TO SEND "
+
+session = smtplib.SMTP("smtp.gmail.com", 587)
+session.starttls()
+session.login (SENDER_EMAIL, SENDER_PASSWD)
+session.sendmail(SENDER_EMAIL, RECIEVER_EMAIL, MESSAGE)
